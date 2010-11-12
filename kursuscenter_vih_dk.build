@@ -1,0 +1,16 @@
+; drush make API version
+api = 2
+
+core = 7.x
+
+; CVS checkout of Drupal 7.x. Requires the `core` property to be set to 7.x.
+projects[drupal][type] = "core"
+projects[drupal][download][type] = "cvs"
+projects[drupal][download][root] = ":pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal"
+projects[drupal][download][revision] = "HEAD"
+projects[drupal][download][module] = "drupal"
+
+projects[kursuscenter_vih_dk][type] = "profile"
+projects[kursuscenter_vih_dk][download][type] = "git"
+projects[kursuscenter_vih_dk][download][url] = "git://github.com/vih/kursuscenter.vih.dk-deploy.git"
+projects[kursuscenter_vih_dk][download][branch] = "master"
