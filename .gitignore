@@ -2,5 +2,5 @@
 .project
 .settings/*
 libraries/*
-modules/contrib/*
-themes/contrib/*
+modules/*
+themes/*
