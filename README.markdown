@@ -28,6 +28,12 @@ entire site, you can run this:
 
     drush make --no-core --contrib-destination=. kursuscenter_vih_dk.make
 
+#### Rebuild everything ####
+
+If you want to force a rebuild of everything, you can run this:
+
+    drush si vih_dk
+
 More information
 --
     
