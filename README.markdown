@@ -32,7 +32,7 @@ entire site, you can run this:
 
 If you want to force a rebuild of everything, you can run this:
 
-    drush si vih_dk
+    drush si kursuscenter_vih_dk
 
 More information
 --
