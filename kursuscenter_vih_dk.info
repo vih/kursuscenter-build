@@ -19,6 +19,8 @@ dependencies[] = overlay
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
+
+;contrib
 dependencies[] = wysiwyg
 dependencies[] = googleanalytics
 dependencies[] = pathauto
@@ -32,4 +34,5 @@ dependencies[] = styles
 dependencies[] = styles_ui
 dependencies[] = file_styles
 dependencies[] = token
+dependencies[] = features
 files[] = kursuscenter_vih_dk.profile
