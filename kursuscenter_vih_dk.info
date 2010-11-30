@@ -19,7 +19,6 @@ dependencies[] = overlay
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
-dependencies[] = features
 dependencies[] = wysiwyg
 dependencies[] = googleanalytics
 dependencies[] = pathauto
