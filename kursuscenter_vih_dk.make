@@ -1,39 +1,47 @@
 api = 2
 core = 7.x
-
-projects[google_analytics][subdir] = contrib 
-projects[wysiwyg][subdir] = contrib
-projects[pathauto][subdir] = contrib
-projects[devel][subdir] = contrib
-projects[ctools][subdir] = contrib
-projects[entity][subdir] = contrib
+api = 2
+core = 7.x
 
 projects[boxes][subdir] = contrib
 projects[boxes][version] = 1.0-beta1
 
-projects[media][subdir] = contrib
-projects[media][version] = 1.x-dev
+projects[cck][subdir] = "contrib"
+projects[cck][version] = "2.x-dev"
 
-projects[features][download][type] = "cvs"
-projects[features][download][root] = ":pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal-contrib"
-projects[features][download][revision] = "DRUPAL-7--1"
-projects[features][download][module] = "contributions/modules/features"
-projects[features][subdir] = contrib
+projects[ctools][subdir] = contrib
+projects[ctools][version] = 1.x-dev
+
+projects[devel][subdir] = contrib
+
+projects[entity][subdir] = contrib
+
+projects[feeds][subdir] = contrib
+projects[feeds][version] = 2.0-alpha2
+
+projects[google_analytics][subdir] = contrib 
+
+projects[media][subdir] = contrib
+projects[media][version] = 1.0-beta2
+
+projects[pathauto][subdir] = contrib
+
+projects[wysiwyg][subdir] = contrib
 
 projects[styles][download][type] = "cvs"
 projects[styles][download][root] = ":pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal-contrib"
 projects[styles][download][revision] = "DRUPAL-7--2"
 projects[styles][download][module] = "contributions/modules/styles"
 projects[styles][subdir] = "contrib"
+projects[styles][patch][] = "http://drupal.org/files/issues/styles-error-during-install-961646-2.patch"
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.0-alpha3
 
-projects[feeds][subdir] = contrib
-projects[feeds][version] = 2.0-alpha2
+projects[transliteration][subdir] = contrib
 
-projects[xmlsitemap] = contrib
-projects[xmlsitemap] = 2.x-dev
+projects[xmlsitemap][subdir] = contrib
+projects[xmlsitemap][version] = 2.x-dev
 
 ; Themes
 projects[globen][type] = "theme"
