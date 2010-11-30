@@ -1,5 +1,5 @@
 <?php
-require '../standard/standard.install';
+require dirname(__FILE__) . '/../standard/standard.install';
 
 /**
  * Implements hook_install().
