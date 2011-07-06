@@ -2,7 +2,6 @@ api = 2
 core = 7.x
 
 projects[boxes][subdir] = contrib
-projects[boxes][version] = 1.0-beta2
 
 projects[cck][subdir] = contrib
 projects[cck][version] = 2.x-dev
@@ -11,14 +10,12 @@ projects[context][subdir] = contrib
 projects[context][version] = 3.0-beta1
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = 1.0-alpha2
 
 projects[devel][subdir] = contrib
 
 projects[entity][subdir] = contrib
 
 projects[feeds][subdir] = contrib
-projects[feeds][version] = 2.0-alpha3
 
 projects[features][subdir] = contrib
 
@@ -28,7 +25,6 @@ projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha2
 
 projects[media][subdir] = contrib
-projects[media][version] = 1.0-beta3
 
 projects[menu_block][subdir] = contrib
 
