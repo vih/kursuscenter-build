@@ -1,5 +1,5 @@
-name = kursuscenter.vih.dk
-description = kursuscenter.vih.dk
+name = Vejle Idrætshøjskole Kursuscenter
+description = Install profile for Vejle Idrætshøjskole Kursuscenters website.
 version = 7.x-0.2
 core = 7.x
 
