@@ -25,6 +25,8 @@ projects[google_analytics][subdir] = contrib
 projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha2
 
+projects[l10n_update][subdir] = contrib
+
 projects[mailchimp][subdir] = contrib
 projects[mailchimp][version] = 2.0-rc1
 
