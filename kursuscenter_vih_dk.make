@@ -16,6 +16,7 @@ projects[devel][subdir] = contrib
 projects[entity][subdir] = contrib
 
 projects[feeds][subdir] = contrib
+projects[feeds][version] = 2.0-alpha4
 
 projects[features][subdir] = contrib
 
@@ -24,13 +25,15 @@ projects[google_analytics][subdir] = contrib
 projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha2
 
+projects[mailchimp][subdir] = contrib
+projects[mailchimp][version] = 2.0-rc1
+
 projects[media][subdir] = contrib
+projects[media][version] = 1.0-beta5
 
 projects[menu_block][subdir] = contrib
 
 projects[pathauto][subdir] = contrib
-
-projects[wysiwyg][subdir] = contrib
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0-beta2
@@ -40,6 +43,8 @@ projects[styles][subdir] = contrib
 projects[token][subdir] = contrib
 
 projects[transliteration][subdir] = contrib
+
+projects[wysiwyg][subdir] = contrib
 
 projects[xmlsitemap][subdir] = contrib
 

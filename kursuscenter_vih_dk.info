@@ -27,6 +27,7 @@ dependencies[] = features
 dependencies[] = feeds
 dependencies[] = file_styles
 dependencies[] = googleanalytics
+dependencies[] = mailchimp
 dependencies[] = media
 dependencies[] = pathauto
 dependencies[] = styles
