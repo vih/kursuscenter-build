@@ -1,17 +1,14 @@
 api = 2
 core = 7.x
 
-projects[boxes][subdir] = contrib
-
 projects[cck][subdir] = contrib
 projects[cck][version] = 2.x-dev
-
-projects[context][subdir] = contrib
-projects[context][version] = 3.0-beta1
 
 projects[ctools][subdir] = contrib
 
 projects[devel][subdir] = contrib
+
+projects[diff][subdir] = contrib
 
 projects[entity][subdir] = contrib
 
@@ -20,31 +17,43 @@ projects[feeds][version] = 2.0-alpha4
 
 projects[features][subdir] = contrib
 
+projects[file_entity][subdir] = contrib
+projects[file_entity][version] = 1.x-dev
+
 projects[google_analytics][subdir] = contrib 
+
+projects[imageapi][subdir] = contrib
+projects[imageapi][version] = 1.x-dev
 
 projects[job_scheduler][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha2
 
 projects[l10n_update][subdir] = contrib
 
+projects[logintoboggan][subdir] = contrib
+
 projects[mailchimp][subdir] = contrib
 projects[mailchimp][version] = 2.0-rc1
 
 projects[media][subdir] = contrib
-projects[media][version] = 1.0-beta5
 
 projects[menu_block][subdir] = contrib
 
+projects[metatag][subdir] = contrib
+
 projects[pathauto][subdir] = contrib
 
+projects[redirect][subdir] = contrib
+
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-beta2
 
 projects[styles][subdir] = contrib
 
 projects[token][subdir] = contrib
 
 projects[transliteration][subdir] = contrib
+
+projects[views][subdir] = contrib
 
 projects[wysiwyg][subdir] = contrib
 

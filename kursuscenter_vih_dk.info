@@ -20,14 +20,16 @@ dependencies[] = taxonomy
 dependencies[] = toolbar
 
 ;contrib
-dependencies[] = boxes
 dependencies[] = ctools
+dependencies[] = diff
 dependencies[] = entity
 dependencies[] = features
 dependencies[] = feeds
 dependencies[] = file_styles
 dependencies[] = googleanalytics
+dependencies[] = imageapi
 dependencies[] = l10n_update
+dependencies[] = logintoboggan
 dependencies[] = mailchimp
 dependencies[] = media
 dependencies[] = pathauto
