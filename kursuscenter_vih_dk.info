@@ -21,20 +21,14 @@ dependencies[] = toolbar
 
 ;contrib
 dependencies[] = ctools
-dependencies[] = diff
 dependencies[] = entity
 dependencies[] = features
-dependencies[] = feeds
-dependencies[] = file_styles
 dependencies[] = googleanalytics
-dependencies[] = imageapi
 dependencies[] = l10n_update
 dependencies[] = logintoboggan
 dependencies[] = mailchimp
 dependencies[] = media
 dependencies[] = pathauto
-dependencies[] = styles
-dependencies[] = styles_ui
 dependencies[] = token
 dependencies[] = wysiwyg
 dependencies[] = xmlsitemap
