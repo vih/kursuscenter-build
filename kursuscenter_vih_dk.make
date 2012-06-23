@@ -17,7 +17,7 @@ projects[l10n_update][subdir] = contrib
 projects[l10n_update][version] = 1.0-beta3
 
 projects[logintoboggan][subdir] = contrib
-projects[logintoboggan][version] = 1.2
+projects[logintoboggan][version] = 1.3
 
 projects[mailchimp][subdir] = contrib
 projects[mailchimp][version] = 2.5
@@ -26,16 +26,16 @@ projects[media][subdir] = contrib
 projects[media][version] = 1.1
 
 projects[metatag][subdir] = contrib
-projects[metatag][version] = 1.0-alpha2
+projects[metatag][version] = 1.0-alpha6
 
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.1
 
 projects[redirect][subdir] = contrib
-projects[redirect][version] = 1.0-beta3
+projects[redirect][version] = 1.0-beta4
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = 2.0-beta3
+projects[strongarm][version] = 2.0
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.1
@@ -44,7 +44,7 @@ projects[transliteration][subdir] = contrib
 projects[transliteration][version] = 3.1
 
 projects[views][subdir] = contrib
-projects[views][version] = 3.0-rc1
+projects[views][version] = 3.3
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = 2.1
