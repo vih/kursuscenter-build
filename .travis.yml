@@ -22,5 +22,4 @@ before_script:
 script: 
   - test -d profiles/kursuscenter_vih_dk
   - test -d profiles/kursuscenter_vih_dk/modules/contrib
-  - test -d profiles/kursuscenter_vih_dk/modules/vih
   - test -d profiles/kursuscenter_vih_dk/themes
