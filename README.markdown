@@ -1,4 +1,4 @@
-[kursuscenter.vih.dk](http://kursuscenter.vih.dk)
+[kursuscenter.vih.dk](http://kursuscenter.vih.dk) [![Build Status](https://secure.travis-ci.org/vih/kursuscenter.vih.dk-deploy.png?branch=master)](http://travis-ci.org/vih/kursuscenter.vih.dk-deploy)
 ==
 
 Instructions on how to build the site from Drupal 7.
