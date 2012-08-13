@@ -1,5 +1,5 @@
 <?php
-require dirname(__FILE__) . '/../standard/standard.install';
+require dirname(__FILE__) . '/../minimal/minimal.install';
 
 /**
  * Implements hook_install().
@@ -7,17 +7,37 @@ require dirname(__FILE__) . '/../standard/standard.install';
  * Perform actions to set up the site for this profile.
  */
 function kursuscenter_vih_dk_install() {
-  standard_install();
+  minimal_install();
 
   $theme = 'globen';
+  $admin_theme = 'seven';
 
+  // enable gheme
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')
     ->condition('name', $theme)
     ->execute();
-  variable_set('theme_default', $theme);
 
+  variable_set('theme_default', $theme);
+  
+  // disable bartik
+  db_update('system')
+    ->fields(array('status' => 0))
+    ->condition('type', 'theme')
+    ->condition('name', 'bartik')
+    ->execute();  
+
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $admin_theme)
+    ->execute();
+  variable_set('admin_theme', $admin_theme);
+  variable_set('node_admin_theme', '1');
+
+  // put content in regions
   $values = array(
     array(
       'module' => 'system',
@@ -36,11 +56,67 @@ function kursuscenter_vih_dk_install() {
   }
   $query->execute();
   
+
+  // Add text formats.
+  $filtered_html_format = array(
+    'format' => 'filtered_html',
+    'name' => 'Filtered HTML',
+    'weight' => 0,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // HTML filter.
+      'filter_html' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $filtered_html_format = (object) $filtered_html_format;
+  filter_format_save($filtered_html_format);
+
+  $full_html_format = array(
+    'format' => 'full_html',
+    'name' => 'Full HTML',
+    'weight' => 1,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $full_html_format = (object) $full_html_format;
+  filter_format_save($full_html_format);  
+  
   // setting up the editor
   _vih_dk_configure_wysiwyg();
   _vih_dk_configure_formatters();
 }
-
 
 function _vih_dk_configure_wysiwyg() {
   //WYSIWYG Setup Filtered HTML
@@ -234,49 +310,3 @@ function _vih_dk_configure_formatters() {
   }
 }
 
-/**
- * Adds the tags field to all media bundles.
- */
-function _media_add_field_tags() {
-  foreach (media_type_get_types() as $bundle => $type) {
-    $instance = array(
-      'field_name' => 'field_tags',
-      'entity_type' => 'media',
-      'bundle' => $bundle,
-      'label' => 'Tags',
-      'widget' => array(
-        'type' => 'taxonomy_autocomplete',
-      ),
-
-      // @todo: implement this.
-      //'display' => array();
-    );
-    field_create_instance($instance);
-  }
-}
-
-/**
- * Adds a description field to all media bundles.
- * @todo: do this.
- */
-function _media_add_field_description() {
-
-  $field = array(
-    'field_name' => 'media_description',
-    'type' => 'text_long',
-    'translatable' => TRUE,
-  );
-  field_create_field($field);
-
-  foreach (media_type_get_types() as $bundle => $type) {
-    $instance = array(
-      'field_name' => 'media_description',
-      'entity_type' => 'media',
-      'bundle' => $bundle,
-      'label' => 'Description',
-      // @todo: implement this.
-      //'display' => array();
-    );
-    field_create_instance($instance);
-  }
-}
