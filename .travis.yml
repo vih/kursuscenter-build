@@ -32,7 +32,6 @@ install:
   # Test the current branch
   - cd drupal
   - drush make --prepare-install profiles/kursuscenter-build/build-kursuscenter.make --yes
-  - drush dl panopoly_demo-1.x-dev
   - cd ../
 
   # Setup files
