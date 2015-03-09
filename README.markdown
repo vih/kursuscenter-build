@@ -1,4 +1,4 @@
-[kursuscenter.vih.dk](http://kursuscenter.vih.dk) [![Build Status](https://secure.travis-ci.org/vih/kursuscenter.vih.dk-deploy.png?branch=master)](http://travis-ci.org/vih/kursuscenter.vih.dk-deploy)
+[kursuscenter.vih.dk](http://kursuscenter.vih.dk) [![Build Status](https://secure.travis-ci.org/vih/kursuscenter-build.png?branch=7.x-1.x)](http://travis-ci.org/vih/kursuscenter-build)
 ==
 
 Instructions on how to build the site from Drupal 7.
@@ -6,7 +6,7 @@ Instructions on how to build the site from Drupal 7.
 Requirements
 --
 
-* [drush](http://drupal.org/project/drush) 
+* [drush](http://drupal.org/project/drush)
 * [drush_make](http://drupal.org/project/drush_make)
 
 Installation
@@ -14,8 +14,8 @@ Installation
 
 To build a complete site, run:
 
-    drush make kursuscenter_vih_dk.build ~/workspace/kursuscenter_vih_dk_build
-    
+    drush make build-kursuscenter.make ~/workspace/kursuscenter_vih_dk_build
+
 Create the settings.php in sites/all/default
 Create "files" directory in sites/all/default
 
@@ -26,15 +26,16 @@ Navigate to the root directory in a webbrowser.
 If you want to update just the install profile instead of rebuilding the
 entire site, you can run this:
 
-    drush make --no-core --contrib-destination=. kursuscenter_vih_dk.make
+    drush make --no-core --contrib-destination=. drupal-org.make
 
 #### Rebuild everything ####
 
 If you want to force a rebuild of everything, you can run this:
 
-    drush si kursuscenter_vih_dk
+    drush si panopolicious
+    drush en kursuscenter_deploy
 
 More information
 --
-    
+
 See more on [Drupal deployments & workflows with version control, drush_make, and Aegir](http://www.migueljacq.com/content/drupal-deployments-workflows-version-control-drushmake-and-aegir)

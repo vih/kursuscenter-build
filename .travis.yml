@@ -1,25 +1,66 @@
 language: php
 
 php:
-  - 5.3
+  - 5.4
 
 mysql:
   database: drupal
   username: root
   encoding: utf8
-  
-before_script:
-  - "mysql -e 'create database drupal;'"
-  - pear channel-discover pear.drush.org
-  - pear install drush/drush
-  - phpenv rehash
-  - drush make kursuscenter_vih_dk.build ../kursuscenter.vih.dk
-  - cd ../kursuscenter.vih.dk
-  - sudo chmod -R 777 sites/all/modules
-  - drush si kursuscenter_vih_dk --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=VIH@2012 --site-mail=admin@example.com --site-name="kursuscenter.vih.dk" --yes
-  - drush cc all --yes
 
-script: 
-  - test -d profiles/kursuscenter_vih_dk
-  - test -d profiles/kursuscenter_vih_dk/modules/contrib
-  - test -d profiles/kursuscenter_vih_dk/themes
+install:
+  - sudo apt-get update > /dev/null
+  - "mysql -e 'create database drupal;'"
+
+  # Install the latest Drush 6.
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require drush/drush:6.*
+  - phpenv rehash
+
+  # Build Behat dependencies
+  - cd ./tests/behat
+  - composer install --no-interaction
+  - cd ../../../
+
+  # Build Codebase
+  - mkdir private_files
+  - mkdir profiles
+  - mv kursuscenter-build profiles/kursuscenter-build
+  - mkdir drupal
+  - mv profiles drupal/
+
+  # Test the current branch
+  - cd drupal
+  - drush make --prepare-install profiles/kursuscenter-build/build-kursuscenter.make --yes
+  - drush dl panopoly_demo-1.x-dev
+  - cd ../
+
+  # Setup files
+  - sudo chmod -R 777 drupal/sites/all
+
+  # Setup display for Selenium
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 5
+
+  # Get Selenium
+  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.37.0.jar
+  - java -jar selenium-server-standalone-2.37.0.jar > /dev/null 2>&1 &
+  - until netstat -an 2>/dev/null | grep '4444.*LISTEN'; do true; done
+
+  # Disable sendmail
+  - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
+before_script:
+
+  - cd drupal
+  - drush si panopoly --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --site-name="kursuscenter.vih.dk" --yes
+  - drush en kursuscenter_deploy -y
+  - drush pm-disable dblog -y
+  - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
+  - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
+  - cd profiles/kursuscenter-build/tests/behat
+
+script:
+
+  - ./bin/behat --config behat.travis.yml
