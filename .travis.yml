@@ -64,7 +64,7 @@ before_script:
   - drush en kursuscenter_deploy -y
   - drush pm-disable dblog -y
   - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
-  - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
+  - nc -zvv localhost 8888; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 8888..."; nc -zvv localhost 8888; out=$?; sleep 5; done
   - cd profiles/kursuscenter-build/tests/behat
 
 script:
