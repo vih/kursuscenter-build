@@ -49,7 +49,7 @@ install:
   - sleep 5
 
   # Get Selenium
-  - wget http://selenium.googlecode.com/files/selenium-server-standalone-2.37.0.jar
+  - wget http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar
   - java -jar selenium-server-standalone-2.37.0.jar > /dev/null 2>&1 &
   - nc -zvv localhost 4444; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 4444..."; nc -zvv localhost 4444; out=$?; sleep 5; done
 
