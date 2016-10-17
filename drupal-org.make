@@ -12,6 +12,13 @@ projects[panopoly][download][revision] = 65ea0dc
 
 ; Contrib modules
 
+projects[mailchimp][version] = 2.13
+
+libraries[mailchimp][download][type] = "get"
+libraries[mailchimp][download][url] = "https://github.com/lsolesen/mailchimp-api-class/archive/v.1.3.2.zip"
+libraries[mailchimp][directory_name] = "mailchimp"
+libraries[mailchimp][destination] = "libraries"
+
 projects[panopoly_demo][version] = 1.38
 projects[panopoly_demo][subdir] = panopoly
 
