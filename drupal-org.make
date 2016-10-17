@@ -25,6 +25,12 @@ projects[panopoly_news][patch][2256489] = http://drupal.org/files/issues/issue-2
 projects[panopoly_seo][version] = 1.0-beta8
 projects[panopoly_seo][subdir] = panopoly
 
+projects[select_or_other][version] = 2.22
+
+projects[webform][version] = 4.14
+
+projects[webform_mailchimp][version] = 2.0-beta1
+
 ; Custom modules
 
 projects[kursuscenter_deploy][type] = "module"
