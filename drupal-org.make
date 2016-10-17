@@ -1,6 +1,8 @@
 api = 2
 core = 7.x
 
+defaults[projects][subdir] = contrib
+
 ; Contrib profiles
 
 projects[panopoly][type] = profile
