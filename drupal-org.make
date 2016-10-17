@@ -12,6 +12,8 @@ projects[panopoly][download][revision] = 65ea0dc
 
 ; Contrib modules
 
+projects[i18n][version] = 1.13
+
 projects[mailchimp][version] = 2.13
 
 libraries[mailchimp][download][type] = "get"
