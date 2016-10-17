@@ -64,5 +64,9 @@ before_script:
   - drush pm-disable dblog -y
   - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
   - nc -zvv localhost 8888; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 8888..."; nc -zvv localhost 8888; out=$?; sleep 5; done
-  - cd profiles/kursuscenter-build/tests/behat
+  # - cd profiles/kursuscenter-build/tests/behat
 
+script:
+
+  - test -d sites/all/modules/contrib
+  - test -d profiles/panopoly
