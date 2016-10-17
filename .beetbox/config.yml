@@ -1,0 +1,16 @@
+---
+vagrant_memory: 3072
+
+# Beetbox settings.
+beet_project: drupal
+beet_domain: derfor.local
+beet_root: "{{ beet_base }}/docroot"
+beet_site_name: derfor.vih.dk
+
+# Drupal settings.
+drupal_build_makefile: yes
+drupal_makefile_path: "{{ beet_base }}/build-derfor-dev.make --working-copy"
+drupal_install_profile: minimal
+drupal_install_site: yes
+drupal_account_name: admin
+drupal_account_pass: admin
